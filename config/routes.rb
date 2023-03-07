@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  ### USER ROUTES ###
+  post "/users" => "users#create"
+  patch "/users/:id" => "users#update"
 end
