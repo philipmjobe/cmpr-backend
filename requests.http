@@ -1,0 +1,10 @@
+### USERS REQUESTS ###
+ ## SIGNUP ##
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "first_name": "Joey",
+  "last_name": "Black",
+  "email": "joe@test.com"
+}
