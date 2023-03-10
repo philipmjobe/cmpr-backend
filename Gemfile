@@ -48,4 +48,4 @@ end
 
 gem 'http'
 gem 'rack-cors'
-gem 'activerecord-import', '~> 0.15.0'
+# gem 'activerecord-import', '~> 0.15.0'
