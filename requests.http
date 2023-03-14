@@ -8,3 +8,6 @@ Content-Type: application/json
   "last_name": "Black",
   "email": "joe@test.com"
 }
+
+### CAMPGROUND REQUESTS ###
+Get http://localhost:3000/campgrounds/1200
