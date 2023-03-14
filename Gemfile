@@ -48,4 +48,5 @@ end
 
 gem 'http'
 gem 'rack-cors'
+gem 'seed_dump'
 # gem 'activerecord-import', '~> 0.15.0'
