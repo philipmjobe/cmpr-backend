@@ -1,7 +1,6 @@
 require 'csv'
 
-# User.create(first_name: "Lee", last_name: "Carver", email: "lee@test.com")
+# # User.create(first_name: "Lee", last_name: "Carver", email: "lee@test.com")
 
-CSV.foreach('csv/CanadaCamp.csv', "r:ISO-8859-1", headers: true) do |row|
-  Campground.create!(row.to_hash)
-end
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'CanadaCamp.csv'))
+put csv_text
