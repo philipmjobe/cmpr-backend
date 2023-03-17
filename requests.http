@@ -1,3 +1,5 @@
+JWT = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzkxNTkyNzd9.lSBcERDcy3F0J1aY4VbCD9wowcK36cM0Wpos4mQbeZE
+
 ### USERS REQUESTS ###
  ## SIGNUP ##
 POST http://localhost:3000/users
@@ -9,6 +11,16 @@ Content-Type: application/json
   "email": "joe@test.com",
   "password": "password",
   "password_conformation": "password"
+}
+
+### SESSIONS REQUESTS ###
+  ## LOGIN ##
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "joe@test.com",
+  "password": "password"
 }
 
 ### CAMPGROUND REQUESTS ###
