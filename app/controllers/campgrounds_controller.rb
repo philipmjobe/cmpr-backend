@@ -2,7 +2,7 @@ class CampgroundsController < ApplicationController
 
   def index
     campgrounds = Campground.all
-    render json: campgrounds.as_json
+    render json: campgrounds
   end 
 
   def create 
@@ -23,12 +23,12 @@ class CampgroundsController < ApplicationController
       nearest_town: params[:nearest_town]
     )
     campground.save
-    render json: campground.as_json
+    render json: campground
   end
 
   def show
     campground = Campground.find_by(id: params[:id])
-    render json: campground.as_json
+    render json: campground
   end
 
   def update
@@ -48,7 +48,7 @@ class CampgroundsController < ApplicationController
     campground.state = params[:state] || campground.state
     campground.nearest_town = params[:nearest_town] || campground.nearest_town
     campground.save
-    render json: campground.as_json
+    render json: campground
   end
 
   def destroy
