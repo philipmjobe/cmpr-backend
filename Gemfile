@@ -49,4 +49,4 @@ end
 gem 'http'
 gem 'rack-cors'
 gem 'seed_dump'
-# gem 'activerecord-import', '~> 0.15.0'
+gem 'active_model_serializers', '~> 0.10.0'
