@@ -1,20 +1,34 @@
 require 'rails_helper'
 
-RSpec.describe User do
-  before(:each) do
-    @attr = { :first_name => "Example",
-              :last_name => "User",
-              :email => "user@example.com",
-              :password => "secret"}
+RSpec.describe User, type: :model do
+  subject {
+    described_class.new(first_name: "Joe", last_name: "Black", email: "joe@test.com", password: "password")
+  }
+
+  describe "Validations" do
+    it "is valid with valid attributes" do
+      expect(subject).to be_valid
     end
 
-    it "should create a new instance given valid attributes" do
-      User.create!(@attr)
+    it "is not valid without a first name" do
+      subject.first_name = nil
+      expect(subject).to_not be_valid
     end 
 
-    it "should require a first name" do
-      no_name_user = User.new(@attr.merge(:first_name => ""))
-      no_name_user.should_not be_vaild
+    it "is not valid without a last name" do
+      subject.last_name = nil
+      expect(subject).to_not be_valid
+    end 
+
+    it "is not vaild without an email" do
+      subject.email = nil
+      expect(subject).to_not be_valid
+    end
+
+    it "is not valid with a password" do
+      subject.password = nil
+      expect(subject).to_not be_valid
     end
   end
+end
 
