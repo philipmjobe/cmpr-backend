@@ -190,6 +190,14 @@ GEM
     rspec-mocks (3.12.4)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
+    rspec-rails (6.0.1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
     rspec-support (3.12.0)
     seed_dump (3.3.1)
       activerecord (>= 4)
@@ -227,6 +235,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.4)
   rspec (~> 3.5)
+  rspec-rails
   seed_dump
   simplecov
   tzinfo-data

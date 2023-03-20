@@ -53,3 +53,6 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'jwt'
 gem 'rspec', '~> 3.5'
 gem 'simplecov', require: false, group: :test
+group :development, :test do
+  gem 'rspec-rails'
+end
