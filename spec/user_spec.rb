@@ -29,6 +29,26 @@ RSpec.describe User, type: :model do
       subject.password = nil
       expect(subject).to_not be_valid
     end
+
+    it "is valid with a first name" do
+      subject.first_name = "Billy"
+      expect(subject).to be_valid
+    end 
+
+    it "is valid with a last name" do
+      subject.last_name = "Obey"
+      expect(subject).to be_valid
+    end
+
+    it "is valid with an email" do
+      subject.email = "bill@test.com"
+      expect(subject).to be_valid
+    end 
+
+    it "is valid with a password" do
+      subject.password = "password"
+      expect(subject).to be_valid
+    end 
   end
 end
 
