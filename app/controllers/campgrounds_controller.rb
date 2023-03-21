@@ -12,7 +12,7 @@ class CampgroundsController < ApplicationController
       gps_composite_field: params[:gps_composite_field],
       campground_code: params[:campground_code],
       campground_name: params[:campground_name],
-      type: params[:type],
+      campground_type: params[:campground_type],
       phone_number: params[:phone_number],
       dates_open: params[:dates_open],
       comments: params[:comments],

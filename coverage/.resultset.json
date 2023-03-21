@@ -1,6 +1,99 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/controllers/campgrounds_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/philipjobe/Desktop/Development/cmpr_backend/app/models/user.rb": {
         "lines": [
           1,
@@ -12,6 +105,19 @@
         ]
       },
       "/Users/philipjobe/Desktop/Development/cmpr_backend/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/models/campground.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/serializers/campground_serializer.rb": {
         "lines": [
           1,
           1,
@@ -33,103 +139,6 @@
           0,
           0,
           0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/controllers/campgrounds_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
           0
         ],
         "branches": {
@@ -203,25 +212,8 @@
         ],
         "branches": {
         }
-      },
-      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/models/campground.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/serializers/campground_serializer.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1679417290
+    "timestamp": 1679424513
   }
 }
