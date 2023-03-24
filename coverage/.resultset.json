@@ -114,6 +114,7 @@
       "/Users/philipjobe/Desktop/Development/cmpr_backend/app/models/campground.rb": {
         "lines": [
           1,
+          1,
           null
         ]
       },
@@ -214,6 +215,6 @@
         }
       }
     },
-    "timestamp": 1679424513
+    "timestamp": 1679599905
   }
 }
