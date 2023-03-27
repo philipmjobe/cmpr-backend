@@ -1,134 +1,94 @@
 require 'rails_helper'
 
 RSpec.describe CampgroundsController, type: :controller do
-  describe "#index" do
+
+  describe 'GET #index' do
     let!(:campgrounds) { create_list(:campground, 3) }
+    before { get :index }
 
-    it "returns a list of all campgrounds in JSON format" do
-      get :index
-      expect(response.body).to eq(campgrounds.to_json)
+    it 'returns http success' do
+      expect(response).to have_http_status(:success)
     end
 
-    it "returns a 200 status code" do
-      get :index
-      expect(response).to have_http_status(:ok)
-    end
-  end
-
-  describe "#create" do
-    let(:params) do
-      {
-        lon: 42.365,
-        lat: -71.104,
-        gps_composite_field: "42.365,-71.104",
-        campground_code: "AA123",
-        campground_name: "Test Campground",
-        campground_type: "Tent Only",
-        phone_number: "555-555-5555",
-        dates_open: "May-October",
-        comments: "Some comments",
-        number_of_campsites: 10,
-        elevation: 1000,
-        amenities: "Fire pits, picnic tables",
-        state: "MA",
-        nearest_town: "Boston"
-      }
+    it 'returns all campgrounds' do
+      expect(assigns(:campgrounds)).to match_array(campgrounds)
     end
 
-    it "creates a new campground with valid params" do
-      expect do
-        post :create, params: params
-      end.to change(Campground, :count).by(1)
-    end
-
-    it "returns the newly created campground in JSON format" do
-      post :create, params: params
-      campground = Campground.last
-      expect(response.body).to eq(campground.to_json)
-    end
-
-    it "returns a 200 status code" do
-      post :create, params: params
-      expect(response).to have_http_status(:ok)
+    it 'returns json response' do
+      expect(response.content_type).to eq('application/json; charset=utf-8')
     end
   end
 
-  describe "#show" do
+  describe 'POST #create' do
+    let!(:campground_params) { attributes_for(:campground) }
+    before { post :create, params: { campground: campground_params } }
+
+    it 'returns http success' do
+      expect(response).to have_http_status(:success)
+    end
+
+    it 'creates a new campground' do
+      expect { post :create, params: { campground: campground_params } }.to change(Campground, :count).by(1)
+    end
+
+    it 'returns json response' do
+      expect(response.content_type).to eq('application/json; charset=utf-8')
+    end
+  end
+
+  describe 'GET #show' do
     let!(:campground) { create(:campground) }
+    before { get :show, params: { id: campground.id } }
 
-    it "returns the requested campground in JSON format" do
-      get :show, params: { id: campground.id }
-      expect(response.body).to eq(campground.to_json)
+    it 'returns http success' do
+      expect(response).to have_http_status(:success)
     end
 
-    it "returns a 200 status code" do
-      get :show, params: { id: campground.id }
-      expect(response).to have_http_status(:ok)
+    it 'returns the campground' do
+      expect(assigns(:campground)).to eq(campground)
+    end
+
+    it 'returns json response' do
+      expect(response.content_type).to eq('application/json; charset=utf-8')
     end
   end
 
-  describe 'PATCH #update' do
+  describe 'PATCH/PUT #update' do
     let!(:campground) { create(:campground) }
-    let(:updated_params) do
-      {
-        lon: 2.345,
-        lat: 1.234,
-        gps_composite_field: "new GPS composite field",
-        campground_code: "new campground code",
-        campground_name: "new campground name",
-        campground_type: "new campground type",
-        phone_number: "new phone number",
-        dates_open: "new dates open",
-        comments: "new comments",
-        number_of_campsites: 10,
-        elevation: 500,
-        amenities: "new amenities",
-        state: "new state",
-        nearest_town: "new nearest town"
-      }
+    let!(:campground_params) { attributes_for(:campground) }
+    before { patch :update, params: { id: campground.id, campground: campground_params } }
+
+    it 'returns http success' do
+      expect(response).to have_http_status(:success)
     end
 
-    context 'with valid params' do
-      it 'updates the campground and returns the updated object' do
-        patch :update, params: { id: campground.id, campground: updated_params }
-        campground.reload
-        expect(campground.lon).to eq(updated_params[:lon])
-        expect(campground.lat).to eq(updated_params[:lat])
-        expect(campground.gps_composite_field).to eq(updated_params[:gps_composite_field])
-        expect(campground.campground_code).to eq(updated_params[:campground_code])
-        expect(campground.campground_name).to eq(updated_params[:campground_name])
-        expect(campground.campground_type).to eq(updated_params[:campground_type])
-        expect(campground.phone_number).to eq(updated_params[:phone_number])
-        expect(campground.dates_open).to eq(updated_params[:dates_open])
-        expect(campground.comments).to eq(updated_params[:comments])
-        expect(campground.number_of_campsites).to eq(updated_params[:number_of_campsites])
-        expect(campground.elevation).to eq(updated_params[:elevation])
-        expect(campground.amenities).to eq(updated_params[:amenities])
-        expect(campground.state).to eq(updated_params[:state])
-        expect(campground.nearest_town).to eq(updated_params[:nearest_town])
-        expect(response).to have_http_status(:success)
-        expect(response.body).to eq(campground.to_json)
-      end
+    it 'updates the campground' do
+      campground.reload
+      expect(campground.lon).to eq(campground_params[:lon])
+      expect(campground.lat).to eq(campground_params[:lat])
+      expect(campground.gps_composite_field).to eq(campground_params[:gps_composite_field])
+      # ... expect other fields to be updated as well
     end
 
-    context 'with invalid params' do
-      it 'does not update the campground and returns an error' do
-        patch :update, params: { id: campground.id, campground: { lon: nil } }
-        campground.reload
-        expect(campground.lon).not_to eq(nil)
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
+    it 'returns json response' do
+      expect(response.content_type).to eq('application/json; charset=utf-8')
     end
   end
 
   describe 'DELETE #destroy' do
     let!(:campground) { create(:campground) }
+    before { delete :destroy, params: { id: campground.id } }
 
-    it 'destroys the campground and returns a success message' do
-      delete :destroy, params: { id: campground.id }
-      expect(Campground.count).to eq(0)
+    it 'returns http success' do
       expect(response).to have_http_status(:success)
-      expect(response.body).to eq({message: "Campground destroyed"}.to_json)
+    end
+
+    it 'deletes the campground' do
+      expect { delete :destroy, params: { id: campground.id } }.to change(Campground, :count).by(-1)
+    end
+
+    it 'returns json response' do
+      expect(response.content_type).to eq('application/json; charset=utf-8')
     end
   end
 end

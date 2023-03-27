@@ -55,4 +55,8 @@ gem 'rspec', '~> 3.5'
 gem 'simplecov', require: false, group: :test
 group :development, :test do
   gem 'rspec-rails'
+  # gem 'factory_girl_rails', '~> 4.5'
 end
+gem "factory_bot", "~> 6.2"
+gem 'faker'
+gem 'rails-controller-testing'
