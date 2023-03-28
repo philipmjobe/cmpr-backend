@@ -38,7 +38,7 @@ class CampgroundsController < ApplicationController
     campground.gps_composite_field = params[:gps_composite_field] || campground.gps_composite_field
     campground.campground_code = params[:campground_code] || campground.campground_code
     campground.campground_name = params[:campground_name] || campground.campground_name
-    campground.type = params[:type] || campground.type
+    campground.campground_type = params[:campground_type] || campground.campground_type
     campground.phone_number = params[:phone_number] || campground.phone_number
     campground.dates_open = params[:dates_open] || campground.dates_open
     campground.comments = params[:comments] || campground.comments
