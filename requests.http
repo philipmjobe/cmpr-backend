@@ -25,3 +25,24 @@ Content-Type: application/json
 
 ### CAMPGROUND REQUESTS ###
 Get http://localhost:3000/campgrounds/1200
+
+### CREATE ###
+POST http://localhost:3000/campgrounds
+Content-Type: application/json
+
+{
+  "lon": 1.0,
+  "lat": 2.0,
+  "gps_composite_field": "some gps field",
+  "campground_code": "123",
+  "campground_name": "Test Campground",
+  "campground_type": "tent",
+  "phone_number": "123-456-7890",
+  "dates_open": "May - September",
+  "comments": "some comments",
+  "number_of_campsites": 10,
+  "elevation": 1000,
+  "amenities": "fire pits",
+  "state": "CA",
+  "nearest_town": "some town"
+}

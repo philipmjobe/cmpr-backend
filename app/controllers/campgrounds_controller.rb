@@ -1,36 +1,25 @@
 class CampgroundsController < ApplicationController
 
   def index
-    campgrounds = Campground.all
-    render json: campgrounds
+    @campgrounds = Campground.all
+    render json: @campgrounds
   end 
 
   def create 
-    campground = Campground.new(
-      lon: params[:lon],
-      lat: params[:lat],
-      gps_composite_field: params[:gps_composite_field],
-      campground_code: params[:campground_code],
-      campground_name: params[:campground_name],
-      campground_type: params[:campground_type],
-      phone_number: params[:phone_number],
-      dates_open: params[:dates_open],
-      comments: params[:comments],
-      number_of_campsites: params[:number_of_campsites],
-      elevation: params[:elevation],
-      amenities: params[:amenities],
-      state: params[:state],
-      nearest_town: params[:nearest_town]
-    )
-    campground.save
-    render json: campground
+    campground = Campground.new(campground_params)
+    if campground.save
+      render json: campground
+    else
+      render json: { errors: campground.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
+  
   def show
-    campground = Campground.find_by(id: params[:id])
-    render json: campground
+    @campground = Campground.find_by(id: params[:id])
+    render json: @campground
   end
-
+  
   def update
     campground = Campground.find_by(id: params[:id])
     campground.lon = params[:lon] || campground.lon
@@ -50,11 +39,18 @@ class CampgroundsController < ApplicationController
     campground.save
     render json: campground
   end
-
+  
   def destroy
     campground = Campground.find_by(id: params[:id])
     campground.destroy
     render json: {message: "Campground destroyed"}
   end 
   
+end
+
+private
+
+def campground_params
+  params.require(:campground).permit(:lon, :lat, :gps_composite_field, :campground_code, :campground_name, :campground_type, :phone_number, :dates_open, :comments, :number_of_campsites, :elevation, :amenities, :state, :nearest_town)
+  puts params.inspect
 end

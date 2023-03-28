@@ -12,23 +12,12 @@
           null,
           1,
           4,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           4,
           4,
+          null,
+          0,
+          null,
+          null,
           null,
           null,
           1,
@@ -44,16 +33,16 @@
           3,
           3,
           3,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
           null,
           null,
           1,
@@ -62,6 +51,13 @@
           3,
           null,
           null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          4,
           null
         ]
       },
@@ -69,8 +65,8 @@
         "lines": [
           1,
           1,
-          13,
-          13,
+          16,
+          16,
           0,
           null,
           0,
@@ -114,7 +110,7 @@
       "/Users/philipjobe/Desktop/Development/cmpr_backend/app/models/campground.rb": {
         "lines": [
           1,
-          1,
+          null,
           null
         ]
       },
@@ -215,6 +211,6 @@
         }
       }
     },
-    "timestamp": 1680017839
+    "timestamp": 1680028194
   }
 }

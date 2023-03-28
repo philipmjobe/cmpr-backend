@@ -1,3 +1,3 @@
 class Campground < ApplicationRecord
-  validates :campground_name, presence: true
+  # validates :campground_name, presence: true
 end
