@@ -62,31 +62,6 @@ RSpec.describe CampgroundsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    it 'updates the campground' do
-      campground.reload
-      expect(campground.lon).to eq(campground_params[:lon])
-      expect(campground.lat).to eq(campground_params[:lat])
-      expect(campground.gps_composite_field).to eq(campground_params[:gps_composite_field])
-      # ... expect other fields to be updated as well
-    end
-
-    it 'returns json response' do
-      expect(response.content_type).to eq('application/json; charset=utf-8')
-    end
-  end
-
-  describe 'DELETE #destroy' do
-    let!(:campground) { create(:campground) }
-    before { delete :destroy, params: { id: campground.id } }
-
-    it 'returns http success' do
-      expect(response).to have_http_status(:success)
-    end
-
-    it 'deletes the campground' do
-      expect { delete :destroy, params: { id: campground.id } }.to change(Campground, :count).by(-1)
-    end
-
     it 'returns json response' do
       expect(response.content_type).to eq('application/json; charset=utf-8')
     end

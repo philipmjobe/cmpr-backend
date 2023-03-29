@@ -46,3 +46,11 @@ Content-Type: application/json
   "state": "CA",
   "nearest_town": "some town"
 }
+
+### UPDATE ###
+PATCH http://localhost:3000/campgrounds/1200
+Content-Type: application/json
+
+{
+  "gps_composite_field": "some gps field"
+}
