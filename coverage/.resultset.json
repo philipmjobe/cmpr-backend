@@ -65,8 +65,8 @@
         "lines": [
           1,
           1,
-          14,
-          14,
+          17,
+          17,
           0,
           null,
           0,
@@ -85,6 +85,28 @@
           1,
           0,
           0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/controllers/sessions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          3,
+          3,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          2,
           null,
           null,
           null
@@ -161,30 +183,6 @@
         "branches": {
         }
       },
-      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/controllers/sessions_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/philipjobe/Desktop/Development/cmpr_backend/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -209,6 +207,6 @@
         }
       }
     },
-    "timestamp": 1680110577
+    "timestamp": 1680110851
   }
 }
