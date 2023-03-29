@@ -65,8 +65,8 @@
         "lines": [
           1,
           1,
-          12,
-          12,
+          14,
+          14,
           0,
           null,
           0,
@@ -90,20 +90,23 @@
           null
         ]
       },
-      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/models/user.rb": {
+      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          2,
           1,
+          null,
           1,
-          1,
-          null
-        ]
-      },
-      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
+          null,
+          null,
           null
         ]
       },
@@ -114,8 +117,25 @@
           null
         ]
       },
+      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/philipjobe/Desktop/Development/cmpr_backend/app/serializers/campground_serializer.rb": {
         "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           1,
           1,
           null
@@ -165,28 +185,6 @@
         "branches": {
         }
       },
-      "/Users/philipjobe/Desktop/Development/cmpr_backend/app/controllers/users_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/philipjobe/Desktop/Development/cmpr_backend/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -211,6 +209,6 @@
         }
       }
     },
-    "timestamp": 1680109715
+    "timestamp": 1680110577
   }
 }

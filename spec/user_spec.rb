@@ -1,54 +1,40 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  subject {
-    described_class.new(first_name: "Joe", last_name: "Black", email: "joe@test.com", password: "password")
-  }
-
-  describe "Validations" do
-    it "is valid with valid attributes" do
-      expect(subject).to be_valid
+RSpec.describe UsersController, type: :controller do
+  describe 'POST #create' do
+    let(:valid_params) do
+      {
+        first_name: 'John',
+        last_name: 'Doe',
+        email: 'johndoe@example.com',
+        password: 'password',
+        password_confirmation: 'password'
+      }
     end
 
-    it "is not valid without a first name" do
-      subject.first_name = nil
-      expect(subject).to_not be_valid
-    end 
-
-    it "is not valid without a last name" do
-      subject.last_name = nil
-      expect(subject).to_not be_valid
-    end 
-
-    it "is not vaild without an email" do
-      subject.email = nil
-      expect(subject).to_not be_valid
+    let(:invalid_params) do
+      {
+        first_name: 'John',
+        last_name: 'Doe',
+        email: 'invalid_email',
+        password: 'password',
+        password_confirmation: 'different_password'
+      }
     end
 
-    it "is not valid with a password" do
-      subject.password = nil
-      expect(subject).to_not be_valid
+    it 'creates a new user with valid params' do
+      expect {
+        post :create, params: valid_params
+      }.to change(User, :count).by(1)
+      expect(response).to have_http_status(:created)
+      expect(JSON.parse(response.body)['message']).to eq('User created successfully')
     end
 
-    it "is valid with a first name" do
-      subject.first_name = "Billy"
-      expect(subject).to be_valid
-    end 
-
-    it "is valid with a last name" do
-      subject.last_name = "Obey"
-      expect(subject).to be_valid
+    it 'does not create a new user with invalid params' do
+      expect {
+        post :create, params: invalid_params
+      }.to_not change(User, :count)
+      expect(response).to have_http_status(:bad_request)
     end
-
-    it "is valid with an email" do
-      subject.email = "bill@test.com"
-      expect(subject).to be_valid
-    end 
-
-    it "is valid with a password" do
-      subject.password = "password"
-      expect(subject).to be_valid
-    end 
   end
 end
-
