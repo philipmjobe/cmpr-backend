@@ -22,7 +22,7 @@ class CampgroundsController < ApplicationController
   
   def update
     campground = Campground.find_by(id: params[:id])
-    campground.lon = params[:lon] || campground.lon
+    campground.lng = params[:lon] || campground.lng
     campground.lat = params[:lat] || campground.lat
     campground.gps_composite_field = params[:gps_composite_field] || campground.gps_composite_field
     campground.campground_code = params[:campground_code] || campground.campground_code
@@ -51,6 +51,6 @@ end
 private
 
 def campground_params
-  params.require(:campground).permit(:lon, :lat, :gps_composite_field, :campground_code, :campground_name, :campground_type, :phone_number, :dates_open, :comments, :number_of_campsites, :elevation, :amenities, :state, :nearest_town)
+  params.require(:campground).permit(:lng, :lat, :gps_composite_field, :campground_code, :campground_name, :campground_type, :phone_number, :dates_open, :comments, :number_of_campsites, :elevation, :amenities, :state, :nearest_town)
   puts params.inspect
 end

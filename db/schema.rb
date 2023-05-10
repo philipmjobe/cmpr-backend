@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_17_165104) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_10_184120) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "campgrounds", force: :cascade do |t|
-    t.decimal "lon", precision: 10, scale: 6
+    t.decimal "lng", precision: 10, scale: 6
     t.decimal "lat", precision: 10, scale: 6
     t.string "gps_composite_field"
     t.string "campground_code"
