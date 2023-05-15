@@ -22,7 +22,7 @@ class CampgroundsController < ApplicationController
   
   def update
     campground = Campground.find_by(id: params[:id])
-    campground.lng = params[:lon] || campground.lng
+    campground.lng = params[:lng] || campground.lng
     campground.lat = params[:lat] || campground.lat
     campground.gps_composite_field = params[:gps_composite_field] || campground.gps_composite_field
     campground.campground_code = params[:campground_code] || campground.campground_code

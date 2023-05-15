@@ -24,6 +24,10 @@ Content-Type: application/json
 }
 
 ### CAMPGROUND REQUESTS ###
+
+GET http://localhost:3000/campgrounds
+Content-Type: application/json
+
 Get http://localhost:3000/campgrounds/1200
 
 ### CREATE ###
